@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Driving Style Predictor</title>
+</head>
+<body>
+    <h1>Driving Style Predictor</h1>
+    <form method="post">
+        <label for="driving_duration_hrs">Driving Duration (hours):</label>
+        <input type="number" id="driving_duration_hrs" name="driving_duration_hrs"><br><br>
+        <label for="average_speed_kmh">Average Speed (km/h):</label>
+        <input type="number" id="average_speed_kmh" name="average_speed_kmh"><br><br>
+        <label for="acceleration_pattern">Acceleration Pattern:</label>
+        <select id="acceleration_pattern" name="acceleration_pattern">
+            <option value="conservative">Conservative</option>
+            <option value="moderate">Moderate</option>
+            <option value="aggressive">Aggressive</option>
+        </select><br><br>
+        <label for="braking_pattern">Braking Pattern:</label>
+        <select id="braking_pattern" name="braking_pattern">
+            <option value="gentle">Gentle</option>
+            <option value="normal">Normal</option>
+            <option value="hard">Hard</option>
+        </select><br><br>
+        <label for="safety_features_usage">Safety Features Usage:</label>
+        <select id="safety_features_usage" name="safety_features_usage">
+            <option value="no">No</option>
+            <option value="yes">Yes</option>
+        </select><br><br>
+        <label for="traffic_violations">Traffic Violations:</label>
+        <input type="number" id="traffic_violations" name="traffic_violations"><br><br>
+        <input type="submit" value="Predict">
+    </form>
+</body>
+</html>

@@ -1,0 +1,105 @@
+.backgroundcolor{
+    background-image: linear-gradient(to top, rgb(16, 33, 182) , rgb(94, 156, 255));
+    height: 100vh;
+    width: 50vw;
+    z-index: -1;
+}
+
+.text h2{
+    color: white;
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 800px;
+    text-align: center;
+    padding-top: 250px;
+    word-spacing: 1px;
+    letter-spacing: 2px;
+}
+
+.text p{
+    padding-top: 20px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 500;
+    word-spacing: 1px;
+    letter-spacing: 2px;
+    color: white;
+}
+
+.signupbtn{
+    color: white;
+    font-size: 15px;
+    background-color: darkblue;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    border: 1px solid white;
+    margin-left: 320px;
+    margin-top: 20px;
+    padding-left: 30px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 30px;
+    border-radius: 10px;
+    letter-spacing: 1px;
+}
+
+.signupbtn:hover{
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.login-box{
+    margin-top: 100px;
+    border-radius: 10px;
+    box-shadow: 0 12px 16px 0 rgba(149, 149, 149, 0.24),0 17px 50px 0 rgba(123, 123, 123, 0.19);
+
+}
+
+.login-text{
+    font-size: 20px;
+    padding-top: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    text-align: center;
+}
+
+.inputbox{
+    border: 1px solid rgb(129, 129, 129);
+    border-radius: 5px;
+    margin-top: 40px;
+    margin-left: 80px;
+    padding-right: 80px;
+    padding-left: 10px;
+    font-size: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: black;
+}
+
+.Login-btn{
+    color: white;
+    font-size: 15px;
+    background-color: darkblue;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    border: 1px solid white;
+    margin-left: 85px;
+    margin-top: 40px;
+    margin-bottom: 50px;
+    padding-left: 100px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 100px;
+    border-radius: 10px;
+    letter-spacing: 1px;
+}
+
+.Login-btn:hover{
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+.errortext{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    font-size: larger;
+
+}

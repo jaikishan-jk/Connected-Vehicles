@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='Fuelpredictor.css') }}">
+</head>
+    <title>Fuel Predictor</title>
+</head>  
+<body>
+    <nav class="navbar navbar-expand-lg" style="background-color: #00008b;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{{ url_for('home')}}">
+                <img src="{{url_for('static',filename='ubti.png')}}" alt="Bootstrap" width="110" height="30">
+            </a> 
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse " id="navbarNav">
+              <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                  <a class="nav-link" style="color: white; font-weight: 500; font-size: large; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;" href="{{ url_for('fuel')}}">Fuel Efficiency</a>
+                </li>
+                <li class="nav-item" >
+                  <a class="nav-link" style="color: white; font-weight: 500; font-size: large; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;" href="{{ url_for('driverprediction')}}">DriverStyle prediction</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link"style="color: white; font-weight: 500; font-size: large; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;" href="{{ url_for('vehicle')}}">Maintenance Predictor</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" style="color: white; font-weight: 500; font-size: large; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;" href="{{ url_for('login')}}">Logout</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+    </nav>   
+      <div class="background">
+      <div class="container">
+        <div class="row">
+        <h3 class="Form-topic">Know Your Car's Efficiency</h3>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col">
+        <div class="formbox">
+        <form method="post">
+            <!--First Box input-->
+           <div class="row">
+            <div class="col">
+                <p class="formitemlabel">Vehicle Class</p>
+            </div>
+            <div class="col">               
+                <select id="vehicle_class" name="vehicle_class">
+                    <option value="Full-size">Full-size</option>
+                    <option value="Sports utility vehicle : small">Sports utility vehicle : small</option>
+                    <option value="Sports utility vehicle : Standard">Sports utility vehicle : Standard</option>
+                    <option value="Mid-size">Mid-size</option>
+                    <option value="Mini Compact">Mini Compact</option>
+                    <option value="Two-seater">Two-seater</option>
+                    <option value="Sub compact">Sub compact</option>
+                    <option value="Compact">Compact</option>
+                    <option value="Station Wagon : Small">Station Wagon : Small</option>
+                    <option value="Station Wagon : Mid-size">Station Wagon : Mid-size</option>
+                    <option value="Pickup truck : Small">Pickup truck : Small</option>
+                    <option value="Pickup truck : Standard">Pickup truck : Standard</option>
+                    <option value="Minivan">Minivan</option>
+                    <option value="Special purpose vehicle">Special purpose vehicle</option>
+                    <option value="Van : Passenger">Van : Passenger</option>
+                </select>
+            </div>
+           </div>
+           <!--First Box input-->
+           <div class="row">
+            <div class="col">
+                <p class="formitemlabel">Engine Size(L)</p>
+            </div>
+            <div class="col">               
+                <input id="engine_size" name="engine_size" type="text">
+            </div>
+           </div>
+           <div class="row">
+            <div class="col">
+                <p class="formitemlabel">Cylinders</p>
+            </div>
+            <div class="col">               
+                <input id="cylinders" name="cylinders" type="text">
+            </div>
+           </div>
+           <div class="row">
+            <div class="col">
+                <p class="formitemlabel">Transmission</p>
+            </div>
+            <div class="col">               
+                <select id="transmission" name="transmission">
+                    <option value="AV">Av</option>
+                    <option value="M">M</option>
+                    <option value="AS">AS</option>
+                    <option value="A">A</option>
+                    <option value="AM">AM</option>
+                    <option value="AM9">AM9</option>
+                    <option value="A5">A5</option>
+                    <option value="A4">A4</option>
+                </select>
+            </div>
+           </div>
+           <div class="row">
+            <div class="col">
+                <p class="formitemlabel">Fuel Type</p>
+            </div>
+            <div class="col">               
+                <select id="fuel_type" name="fuel_type">
+                    <option value="Gasoline">Gasoline</option>
+                    <option value="CNG">CNG</option>
+                    <option value="Diesel">Diesel</option>
+                    <option value="Hybrid">Hybrid</option>
+                </select>
+            </div>
+           </div>
+           <div class="row">
+            <div class="col">
+                <p class="formitemlabel">CO2 Rating(1-10)</p>
+            </div>
+            <div class="col">               
+                <input id="co2_rating" name="co2_rating" type="text">
+            </div>
+           </div>
+           <div class="row">
+            <div class="col"></div>
+            <div class="col">
+                <input class="submit-btn" type="submit" value="Predict">
+            </div>
+            <div class="col"></div>
+           </div>
+        </form>
+        </div>
+        <!-- <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col">
+            <input  class="submit-btn" value="Predict" type="submit">
+            </div>
+            <div class="col-md-3"></div>
+        </div> -->
+        <div class="row">
+            <div class="col">
+                <p class="paratext">The Efficiency of your Car is {{ prediction }} kmpl</p>
+            </div>
+        </div>
+        </div>
+        <div class="col-md-3"></div>
+                    
+    </div>
+</div>
+      </div>
+ 
+    
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
